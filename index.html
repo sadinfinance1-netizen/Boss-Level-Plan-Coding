@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Level Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12">
+
+    <header class="flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-6 mb-10">
+        <div>
+            <h1 class="text-3xl font-extrabold tracking-tighter text-white">BOSS LEVEL<span class="text-emerald-500">_OS</span></h1>
+            <p class="text-gray-500 text-sm mt-1">2026 Engineering Mastery Tracker</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center space-x-3 bg-gray-900 px-4 py-2 rounded border border-gray-800 glow">
+            <div id="status-indicator" class="w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+            <span id="api-status" class="text-sm font-bold text-gray-300">Awaiting Backend...</span>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <section class="lg:col-span-2 space-y-6">
+            <h2 class="text-xl font-bold text-white border-l-4 border-emerald-500 pl-3">The Curriculum</h2>
+            
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded hover:border-gray-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-bold text-emerald-400">Layer 1: High-Performance Engine</h3>
+                    <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Weeks 1-6</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">C++/Rust, Low-Level Memory, Advanced DSA.</p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" class="w-4 h-4 accent-emerald-500 cursor-pointer">
+                    <span class="text-sm">Build multi-threaded HTTP server in C++/Rust</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded hover:border-gray-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-bold text-emerald-400">Layer 2: Distributed Infrastructure</h3>
+                    <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Weeks 7-12</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">System Design, Cloud Orchestration, gRPC.</p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" class="w-4 h-4 accent-emerald-500 cursor-pointer">
+                    <span class="text-sm">Deploy global rate-limiter (1M req/sec)</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded hover:border-gray-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-bold text-emerald-400">Layer 3: Agentic Intelligence</h3>
+                    <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Weeks 13-20</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">LLM Orchestration, RAG, AgentKit, MCP.</p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" class="w-4 h-4 accent-emerald-500 cursor-pointer">
+                    <span class="text-sm">Build autonomous research multi-agent system</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded hover:border-gray-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-lg font-bold text-emerald-400">Layer 4: Safety & Alignment</h3>
+                    <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Weeks 21-24</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">Red-teaming, Guardrails, Secure Sandboxing.</p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" class="w-4 h-4 accent-emerald-500 cursor-pointer">
+                    <span class="text-sm">Deploy proxy middleware for output evaluation</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <h2 class="text-xl font-bold text-white border-l-4 border-blue-500 pl-3">Daily Protocol</h2>
+            
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded">
+                <ul class="space-y-4 text-sm">
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-400">08:00 - 10:00</span>
+                        <span class="font-bold">Deep Theory</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-400">10:00 - 12:00</span>
+                        <span class="font-bold text-emerald-400">Algo & System Drill</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-400">12:00 - 13:00</span>
+                        <span class="font-bold">System Cooldown</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-400">13:00 - 16:00</span>
+                        <span class="font-bold text-blue-400">The Build Block</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span class="text-gray-400">16:00 - 17:00</span>
+                        <span class="font-bold">Market & Safety</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800 p-5 rounded text-xs text-gray-500 font-mono space-y-2">
+                <p>> SYSTEM_USER: Engineer_01</p>
+                <p>> TARGET: DeepMind / Anthropic</p>
+                <p>> UPTIME: <span id="uptime">0h 0m 0s</span></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Simulate checking the FastAPI backend you built earlier
+        // In production, replace the fetch URL with your actual Vercel/Render API URL
+        async function checkBackend() {
+            const statusText = document.getElementById('api-status');
+            const statusIndicator = document.getElementById('status-indicator');
+            
+            try {
+                // Point this to your FastAPI deployment URL e.g., 'https://your-api.vercel.app/'
+                // Using a mock timeout here to simulate the fetch ping
+                setTimeout(() => {
+                    statusIndicator.classList.remove('bg-yellow-500', 'animate-pulse', 'bg-red-500');
+                    statusIndicator.classList.add('bg-emerald-500');
+                    statusText.innerText = "API: Boss Level Active";
+                    statusText.classList.remove('text-gray-300');
+                    statusText.classList.add('text-emerald-400');
+                }, 1500);
+            } catch (error) {
+                statusIndicator.classList.remove('bg-yellow-500', 'animate-pulse');
+                statusIndicator.classList.add('bg-red-500');
+                statusText.innerText = "API: Disconnected";
+            }
+        }
+
+        // Simple Uptime Counter
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = seconds % 60;
+            document.getElementById('uptime').innerText = `${h}h ${m}m ${s}s`;
+        }, 1000);
+
+        // Run checks on load
+        window.onload = checkBackend;
+    </script>
+</body>
+</html>
